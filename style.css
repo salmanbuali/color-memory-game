@@ -1,40 +1,77 @@
 body {
   background-color: #dbdcdf;
+  font-family: 'Rubik', sans-serif;
 }
 .container {
   margin: 0 auto;
+  margin-top: 10px;
   display: grid;
-  padding: 5px;
+  padding: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   border: 3px solid black;
   height: 50vh;
   width: 50vh;
   gap: 10px;
+  border-radius: 5%;
 }
 
 .menu {
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
   width: 50vh;
   align-content: center;
   border: 3px solid black;
-  padding: 5px;
+  padding: 15px;
+  border-radius: 1%;
 }
 
 .tile {
   border: 1px solid black;
+  border-radius: 5%;
 }
 
-/* .startBtn {
-  width: 7vw;
+button {
+  width: 5vw;
+  height: 5vh;
   margin: 10px 0px;
-} */
+  border-radius: 10%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #333;
+  color: white;
+}
 
 .correct {
   font-weight: bold;
   font-style: italic;
   font-size: 1.5rem;
 }
+
+/* w3schools css for navbar*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+/* w3schools css for navbar */
