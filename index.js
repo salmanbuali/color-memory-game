@@ -1,7 +1,7 @@
 const tiles = document.querySelectorAll('.tile')
 const startBtn = document.querySelector('.startBtn')
 const correctP = document.querySelector('.correct')
-const colors = ['aqua', 'red', 'green', 'yellow']
+const colors = ['#0abab5', 'red', 'green', 'yellow']
 const refreshBtn = document.querySelector('#reset')
 let correctCounter = 0
 
@@ -21,6 +21,9 @@ const generate = () => {
 }
 
 const start = () => {
+  if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
+    return
+  }
   tiles.forEach((el) => {
     el.style.backgroundColor = 'grey'
     correctP.removeAttribute('hidden')
