@@ -1,13 +1,13 @@
 const tiles = document.querySelectorAll('.tile')
 const startBtn = document.querySelector('.startBtn')
 const correctP = document.querySelector('.correct')
-const colors = ['aqua', 'red', 'green', 'yellow']
+const colors = ['red', 'green', 'blue', 'yellow', 'teal']
 const refreshBtn = document.querySelector('#reset')
 let correctCounter = 0
 
 const generate = () => {
   for (let i = 0; i < tiles.length; i++) {
-    let color = (Math.random() * 3).toFixed(0)
+    let color = (Math.random() * 4).toFixed(0)
     let correct = (Math.random() * 15).toFixed(0)
     tiles[i].style.backgroundColor = `${colors[color]}`
     tiles[i].setAttribute('color', `${colors[color]}`)
