@@ -55,7 +55,11 @@ startBtn.addEventListener('click', start)
 
 tiles.forEach((el) => {
   el.addEventListener('click', () => {
-    if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
+    if (
+      correctP.innerText === 'YOU LOST' ||
+      correctP.innerText === 'YOU WON' ||
+      correctP.getAttribute('hidden') === 'true'
+    ) {
       return
     }
     let tileColor = el.getAttribute('color')

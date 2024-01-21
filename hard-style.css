@@ -1,5 +1,5 @@
 body {
-  background-color: #dbdcdf;
+  background-color: #ffffff;
   font-family: 'Rubik', sans-serif;
 }
 .container {
@@ -45,6 +45,10 @@ button {
 .correct {
   font-weight: bold;
   font-style: italic;
+  font-size: 1.25rem;
+}
+
+#counter {
   font-size: 1.25rem;
 }
 

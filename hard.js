@@ -1,9 +1,9 @@
 const tiles = document.querySelectorAll('.tile')
 const startBtn = document.querySelector('.startBtn')
 const correctP = document.querySelector('.correct')
-const colors = ['red', 'green', 'blue', 'yellow', 'teal']
-const refreshBtn = document.querySelector('#reset')
-const generateBtn = document.querySelector('.generateBtn')
+const colors = ['black', 'gold', 'maroon', 'yellow', 'teal']
+// const refreshBtn = document.querySelector('#reset')
+const counter = document.querySelector('#counter')
 let correctCounter = 0
 
 const generate = () => {
@@ -20,17 +20,31 @@ const generate = () => {
     }
   }
   startBtn.removeAttribute('hidden')
-  generateBtn.setAttribute('hidden', 'true')
 }
 
 const start = () => {
-  if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
-    return
-  }
-  tiles.forEach((el) => {
-    el.style.backgroundColor = 'grey'
-    correctP.removeAttribute('hidden')
-  })
+  // if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
+  //   return
+  // }
+  startBtn.disabled = 'true'
+  correctCounter = 0
+  correctP.setAttribute('hidden', 'true')
+  generate()
+  let count = 10
+  counter.innerText = count
+  const timer = setInterval(() => {
+    count--
+    counter.innerText = count
+    if (count === 0) {
+      clearInterval(timer)
+      tiles.forEach((el) => {
+        el.style.backgroundColor = 'grey'
+        correctP.removeAttribute('hidden')
+        counter.innerHTML = ''
+        startBtn.removeAttribute('disabled')
+      })
+    }
+  }, 1000)
 }
 
 const reduceCounter = () => {
@@ -52,13 +66,16 @@ const refresh = () => {
   correctP.setAttribute('hidden', 'true')
   generate()
 }
-generateBtn.addEventListener('click', generate)
 
 startBtn.addEventListener('click', start)
 
 tiles.forEach((el) => {
   el.addEventListener('click', () => {
-    if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
+    if (
+      correctP.innerText === 'YOU LOST' ||
+      correctP.innerText === 'YOU WON' ||
+      correctP.getAttribute('hidden') === 'true'
+    ) {
       return
     }
     let tileColor = el.getAttribute('color')
@@ -71,7 +88,6 @@ tiles.forEach((el) => {
         }
       }
       correctP.innerText = 'YOU LOST'
-      generateBtn.removeAttribute('hidden')
     } else {
       el.style.backgroundColor = `${tileColor}`
       reduceCounter()
