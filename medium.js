@@ -1,17 +1,17 @@
 const tiles = document.querySelectorAll('.tile')
 const startBtn = document.querySelector('.startBtn')
 const correctP = document.querySelector('.correct')
-const colors = ['black', 'gold', 'maroon', 'yellow', 'teal']
+const colors = ['red', '']
 const counter = document.querySelector('#counter')
 let correctCounter = 0
 
 const generate = () => {
   for (let i = 0; i < tiles.length; i++) {
-    let color = (Math.random() * 4).toFixed(0)
-    let correct = (Math.random() * 15).toFixed(0)
+    let color = Math.random().toFixed(0)
+    let correct = 'red'
     tiles[i].style.backgroundColor = `${colors[color]}`
     tiles[i].setAttribute('color', `${colors[color]}`)
-    correctP.innerText = `${tiles[correct].style.backgroundColor}`
+    correctP.innerText = correct
   }
   for (let i = 0; i < tiles.length; i++) {
     if (tiles[i].style.backgroundColor === correctP.innerText) {
