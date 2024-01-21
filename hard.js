@@ -3,6 +3,7 @@ const startBtn = document.querySelector('.startBtn')
 const correctP = document.querySelector('.correct')
 const colors = ['red', 'green', 'blue', 'yellow', 'teal']
 const refreshBtn = document.querySelector('#reset')
+const generateBtn = document.querySelector('.generateBtn')
 let correctCounter = 0
 
 const generate = () => {
@@ -18,6 +19,8 @@ const generate = () => {
       correctCounter++
     }
   }
+  startBtn.removeAttribute('hidden')
+  generateBtn.setAttribute('hidden', 'true')
 }
 
 const start = () => {
@@ -40,6 +43,7 @@ const reduceCounter = () => {
 const checkWin = () => {
   if (correctCounter === 0) {
     correctP.innerText = 'YOU WON'
+    refreshBtn.removeAttribute('hidden')
   }
 }
 
@@ -48,8 +52,7 @@ const refresh = () => {
   correctP.setAttribute('hidden', 'true')
   generate()
 }
-
-generate()
+generateBtn.addEventListener('click', generate)
 
 startBtn.addEventListener('click', start)
 
@@ -68,6 +71,7 @@ tiles.forEach((el) => {
         }
       }
       correctP.innerText = 'YOU LOST'
+      generateBtn.removeAttribute('hidden')
     } else {
       el.style.backgroundColor = `${tileColor}`
       reduceCounter()
