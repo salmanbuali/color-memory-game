@@ -1,10 +1,10 @@
 body {
-  background-color: #ffffff;
+  background-color: #f9f5f6;
   font-family: 'Rubik', sans-serif;
 }
 .container {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 50px;
   display: grid;
   padding: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

@@ -22,14 +22,11 @@ const generate = () => {
 }
 
 const start = () => {
-  // if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
-  //   return
-  // }
   startBtn.disabled = 'true'
   correctCounter = 0
   correctP.setAttribute('hidden', 'true')
   generate()
-  let count = 10
+  let count = 7
   counter.innerText = count
   const timer = setInterval(() => {
     count--
@@ -94,5 +91,3 @@ tiles.forEach((el) => {
     }
   })
 })
-
-// refreshBtn.addEventListener('click', refresh)
