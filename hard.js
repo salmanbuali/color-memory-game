@@ -22,9 +22,6 @@ const generate = () => {
 }
 
 const start = () => {
-  // if (correctP.innerText === 'YOU LOST' || correctP.innerText === 'YOU WON') {
-  //   return
-  // }
   startBtn.disabled = 'true'
   correctCounter = 0
   correctP.setAttribute('hidden', 'true')
@@ -94,5 +91,3 @@ tiles.forEach((el) => {
     }
   })
 })
-
-// refreshBtn.addEventListener('click', refresh)
