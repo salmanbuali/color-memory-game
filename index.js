@@ -5,6 +5,10 @@ const colors = ['aqua', 'red', 'green']
 const refreshBtn = document.querySelector('#reset')
 let correctCounter = 0
 
+function toggleDropdown(dropdown) {
+  dropdown.classList.toggle('active')
+}
+
 const generate = () => {
   for (let i = 0; i < tiles.length; i++) {
     let color = (Math.random() * 2).toFixed(0)

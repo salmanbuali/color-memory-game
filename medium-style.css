@@ -119,3 +119,11 @@ li.dropdown {
   display: block;
 }
 /* w3schools css for navbar */
+@media (max-width: 600px) {
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}

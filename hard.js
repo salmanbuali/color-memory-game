@@ -5,6 +5,10 @@ const colors = ['black', 'gold', 'maroon', 'yellow', 'teal']
 const counter = document.querySelector('#counter')
 let correctCounter = 0
 
+function toggleDropdown(dropdown) {
+  dropdown.classList.toggle('active')
+}
+
 const generate = () => {
   for (let i = 0; i < tiles.length; i++) {
     let color = (Math.random() * 4).toFixed(0)
