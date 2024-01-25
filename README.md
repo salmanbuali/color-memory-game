@@ -36,4 +36,4 @@
 
 ##### [SEI Markdown HW](https://github.com/SEI-08-Bahrain/u1_hw_markdown)
 
-#### [w3schools] (https://www.w3schools.com/css/css_dropdowns.asp)
+#### [w3schools](https://www.w3schools.com/css/css_dropdowns.asp)
