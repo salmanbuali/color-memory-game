@@ -50,7 +50,6 @@ const start = () => {
 const reduceCounter = () => {
   if (correctCounter != 0) {
     correctCounter--
-    console.log(correctCounter)
   }
 }
 
